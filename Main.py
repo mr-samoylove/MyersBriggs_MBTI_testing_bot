@@ -49,7 +49,7 @@ def process(message):
         else:
             Variables.jp += 1
 
-    if Variables.current_counter == 69:
+    if Variables.current_counter == 70:
         result = ('E' if Variables.ie > 5 else 'I') + \
                  ('S' if Variables.sn > 10 else 'N') + \
                  ('T' if Variables.tf > 10 else 'F') + \
@@ -80,6 +80,7 @@ def wrap_up(message, result):
 
     Variables.email = None
     Variables.current_counter = 0
+    Variables.ie = Variables.sn = Variables.tf = Variables.jp = 0
 
     bot.send_message(message.from_user.id, "Кликните на /start, чтобы начать заново")
 
